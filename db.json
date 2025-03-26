@@ -1,0 +1,21 @@
+{
+    "posts":{
+        "postID":{
+            "text":"Post related data",
+            "userEmail":"user@gmail.com",
+            "userId":"unique userid",
+            "Likes":{
+                "userid1":true,
+                "userid":false
+            },
+            "comments":{
+                "commentId":{
+                    "email": "commenter@gmail.com",
+                    "text": "comment text",
+                    "timeStamp":"date"
+                }
+            }
+        }
+    }
+}
+
