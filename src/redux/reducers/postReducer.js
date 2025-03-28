@@ -5,6 +5,7 @@ import { UNLIKE_POST } from "../actions/postActions";
 const initState = {posts: [], };
 
 export const postReducer = (state=initState,action) =>{
+    let updatedPosts;
     switch (action.type) {
         case FETCH_POSTS:
             return {...state,posts:action.payload};
@@ -12,7 +13,7 @@ export const postReducer = (state=initState,action) =>{
             return{...state,posts:[action.payload,...state.posts]};
 
         case LIKE_POST: 
-            let updatedPosts = state.posts.map((post)=>
+           updatedPosts = state.posts.map((post)=>
                 post.id ===action.payload.postId
             ? {
                 ...post,
@@ -22,16 +23,16 @@ export const postReducer = (state=initState,action) =>{
             );
            return{...state,posts:updatedPosts}
 
-           case UNLIKE_POST:
-            let updatedPostss = state.posts.map((post)=>
-                post.id ===action.payload.postId
-            ? {
-                ...post,
-                unlikes: {...post.likes,[action.payload.userId]:false},
-            }
-            : post,
-            );
-           return{...state,posts:updatedPostss}
+           case UNLIKE_POST: 
+          updatedPosts = state.posts.map((post)=>
+                 post.id ===action.payload.postId
+             ? {
+                 ...post,
+                 likes: {...post.likes,[action.payload.userId]:false},
+             }
+             : post,
+             );
+            return{...state,posts:updatedPosts} 
             default:
                 return state;
     }
