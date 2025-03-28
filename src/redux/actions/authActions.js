@@ -1,5 +1,5 @@
 import {auth} from "/src/firebase/firebaseConfig.js"
-import { createUserWithEmailAndPassword, signInWithCredential, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const SIGN_OUT = "SIGN_OUT";

@@ -8,7 +8,7 @@ const Navbar = () => {
    let user = useSelector(state=>state.auth.user);
    const dispatch=useDispatch();
    const handleLogout=()=>{
-   dispatch(signout())
+     dispatch(signout())
    }
   return (
     <Flex as="nav"
